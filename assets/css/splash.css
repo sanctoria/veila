@@ -1,0 +1,76 @@
+/* Veila splash page. Shared by the front end and the settings-page live preview. */
+html,body.veila-body{margin:0;padding:0}
+body.veila-body{background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.veila-root{--veila-pad:clamp(20px,6cqi,64px);position:relative;box-sizing:border-box;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;container-type:inline-size;container-name:veila;color:var(--veila-text);font-family:var(--veila-font);font-size:18px;line-height:1.6;overflow:hidden;isolation:isolate}
+.veila-root *,.veila-root *::before,.veila-root *::after{box-sizing:border-box}
+.veila-root [hidden]{display:none!important}
+.veila-bg{position:absolute;inset:0;z-index:-1;background:var(--veila-bg);overflow:hidden}
+.veila-bg::after{content:"";position:absolute;inset:0;background:rgba(8,12,20,var(--veila-overlay,0));pointer-events:none}
+.veila-main{flex:1;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;justify-items:center;padding:var(--veila-pad);padding-bottom:calc(var(--veila-pad) + 24px)}
+.veila-media{display:none}
+.veila-content{width:100%;max-width:660px}
+.veila-card{width:100%}
+.veila-align-center .veila-card{text-align:center}
+.veila-align-left .veila-card{text-align:left}
+
+/* Logo */
+.veila-logo{margin:0 0 28px}
+.veila-logo img{display:inline-block;width:min(100%,var(--veila-logo-w));height:auto;max-height:200px;object-fit:contain}
+.veila-wordmark{display:inline-block;font-family:var(--veila-head-font);font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:var(--veila-heading);font-weight:600}
+
+/* Type */
+.veila-badge{display:inline-flex;align-items:center;gap:14px;margin:0 0 18px;font-family:var(--veila-font);font-size:12.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--veila-link)}
+.veila-align-center .veila-badge::before,.veila-align-center .veila-badge::after{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
+.veila-align-left .veila-badge::after{content:"";width:40px;height:1px;background:currentColor;opacity:.6}
+.veila-headline{margin:0;font-family:var(--veila-head-font);font-size:clamp(26px,7cqi,var(--veila-h-size));line-height:1.12;font-weight:500;letter-spacing:-.005em;color:var(--veila-heading);text-wrap:balance}
+.veila-headline::after{content:"";display:block;width:56px;height:2px;margin:24px auto 0;background:var(--veila-accent)}
+.veila-align-left .veila-headline::after{margin-left:0}
+.veila-message{margin:22px 0 0;font-size:clamp(16px,2.6cqi,19px);opacity:.92;text-wrap:pretty}
+.veila-message p{margin:0 0 .8em}
+.veila-message p:last-child{margin-bottom:0}
+.veila-message a,.veila-footer a{color:var(--veila-link);text-underline-offset:3px}
+.veila-footer a{color:var(--veila-foot-link,var(--veila-link))}
+
+/* Social */
+.veila-social{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:32px 0 0;padding:0}
+.veila-align-center .veila-social{justify-content:center}
+.veila-social a{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;color:var(--veila-link);border:1px solid color-mix(in srgb,var(--veila-link) 40%,transparent);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.veila-social a:hover,.veila-social a:focus-visible{background:var(--veila-accent);border-color:var(--veila-accent);color:var(--veila-on-accent)}
+.veila-social svg{width:18px;height:18px}
+.veila-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Footer */
+.veila-footer{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:0 var(--veila-pad) 22px;font-size:13px;letter-spacing:.02em;color:var(--veila-foot,var(--veila-text));opacity:.85}
+.veila-footer:empty{display:none}
+.veila-align-left.veila-layout-minimal .veila-footer{justify-content:flex-start}
+
+/* Buttons and inputs shared with Pro (signup form). */
+.veila-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border:1px solid var(--veila-accent);border-radius:3px;background:var(--veila-accent);color:var(--veila-on-accent);font:600 13px/1.2 var(--veila-font);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.veila-button:hover,.veila-button:focus-visible{filter:brightness(1.08)}
+.veila-input{width:100%;padding:12px 14px;border:1px solid color-mix(in srgb,var(--veila-text) 30%,transparent);border-radius:3px;background:color-mix(in srgb,var(--veila-surface) 88%,#fff 12%);color:var(--veila-text);font:16px/1.3 var(--veila-font)}
+.veila-input:focus{outline:2px solid var(--veila-accent);outline-offset:1px}
+
+/* Card layout */
+.veila-layout-card .veila-content{max-width:620px}
+.veila-layout-card .veila-card{background:var(--veila-card);border-radius:14px;padding:clamp(28px,7cqi,56px);box-shadow:0 30px 80px rgba(10,16,28,.18),0 2px 6px rgba(10,16,28,.06)}
+
+/* Minimal layout */
+.veila-layout-minimal .veila-main{justify-items:start;padding-left:max(var(--veila-pad),8cqi)}
+.veila-layout-minimal .veila-content{max-width:760px}
+.veila-layout-minimal .veila-headline{font-weight:600;letter-spacing:-.02em}
+
+/* Split layout: image pane beside the text when there is room. */
+.veila-layout-split .veila-main{padding:0}
+.veila-layout-split .veila-media{display:block;width:100%;min-height:34cqi;align-self:stretch;background:var(--veila-media) center/cover no-repeat,linear-gradient(150deg,var(--veila-accent),color-mix(in srgb,var(--veila-accent) 45%,#000))}
+.veila-layout-split .veila-content{padding:var(--veila-pad);max-width:640px}
+@container veila (min-width: 760px){
+	.veila-layout-split .veila-main{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+	.veila-layout-split .veila-media{min-height:100%;height:100%}
+	.veila-layout-split .veila-content{padding-bottom:calc(var(--veila-pad) + 48px)}
+	.veila-layout-split .veila-footer{position:absolute;right:0;bottom:0;left:auto;width:50%}
+}
+
+/* Preview flag (admins only, on ?veila_preview=1). */
+.veila-preview-flag{position:fixed;top:0;left:0;right:0;z-index:99999;padding:8px 16px;background:#1B2A4A;color:#F5EFE2;font:600 13px/1.4 system-ui,sans-serif;text-align:center}
+
+@media (prefers-reduced-motion: reduce){.veila-root *{transition:none!important;animation:none!important}}

@@ -1,0 +1,7 @@
+dist/
+vendor/
+node_modules/
+screens/
+*.zip
+.DS_Store
+__pycache__/
