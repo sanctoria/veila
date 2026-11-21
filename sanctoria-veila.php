@@ -1,16 +1,16 @@
 <?php
 /**
- * Plugin Name:       Veila
- * Plugin URI:        https://wordpress.org/plugins/veila/
- * Description:       A coming-soon and maintenance page for WordPress with a live preview, starter templates, and the right HTTP status codes. Off until you turn it on. No ads, no accounts, and no external services. Settings: Appearance > Veila.
- * Version:           1.0.0
+ * Plugin Name:       Sanctoria Veila – Coming Soon & Maintenance Mode
+ * Plugin URI:        https://wordpress.org/plugins/sanctoria-veila/
+ * Description:       A coming-soon and maintenance page for WordPress with a live preview, starter templates, and the right HTTP status codes. Off until you turn it on. No ads, no accounts, and no external services. Settings: Appearance > Sanctoria Veila.
+ * Version:           1.0.1
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Sanctoria
  * Author URI:        https://sanctoria.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       veila
+ * Text Domain:       sanctoria-veila
  * Domain Path:       /languages
  *
  * @package Veila
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VEILA_VERSION', '1.0.0' );
+define( 'VEILA_VERSION', '1.0.1' );
 define( 'VEILA_FILE', __FILE__ );
 define( 'VEILA_DIR', plugin_dir_path( __FILE__ ) );
 define( 'VEILA_URL', plugin_dir_url( __FILE__ ) );

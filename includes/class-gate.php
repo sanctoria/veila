@@ -233,9 +233,9 @@ class Veila_Gate {
 			header( 'Content-Type: text/plain; charset=' . get_option( 'blog_charset' ) );
 		}
 		if ( 'maintenance' === $mode ) {
-			echo esc_html__( 'This site is down for maintenance. Please try again soon.', 'veila' );
+			echo esc_html__( 'This site is down for maintenance. Please try again soon.', 'sanctoria-veila' );
 		} else {
-			echo esc_html__( 'This site is not public yet.', 'veila' );
+			echo esc_html__( 'This site is not public yet.', 'sanctoria-veila' );
 		}
 	}
 }

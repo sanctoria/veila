@@ -54,7 +54,7 @@ class Veila_Render {
 	 * @return string
 	 */
 	public static function default_badge( $mode ) {
-		return 'maintenance' === $mode ? __( 'Down for maintenance', 'veila' ) : __( 'Coming soon', 'veila' );
+		return 'maintenance' === $mode ? __( 'Down for maintenance', 'sanctoria-veila' ) : __( 'Coming soon', 'sanctoria-veila' );
 	}
 
 	/**
@@ -230,7 +230,7 @@ class Veila_Render {
 			$parts[] = '<span class="veila-footer-text">' . esc_html( $s['footer_text'] ) . '</span>';
 		}
 		if ( ! empty( $s['show_login_link'] ) || 'preview' === $context ) {
-			$parts[] = '<a class="veila-login-link" href="' . esc_url( wp_login_url() ) . '"' . ( empty( $s['show_login_link'] ) ? ' hidden' : '' ) . '>' . esc_html__( 'Log in', 'veila' ) . '</a>';
+			$parts[] = '<a class="veila-login-link" href="' . esc_url( wp_login_url() ) . '"' . ( empty( $s['show_login_link'] ) ? ' hidden' : '' ) . '>' . esc_html__( 'Log in', 'sanctoria-veila' ) . '</a>';
 		}
 
 		/**
@@ -241,7 +241,7 @@ class Veila_Render {
 		 */
 		$credit_allowed = apply_filters( 'veila_show_credit', ! empty( $s['show_credit'] ), $s );
 		if ( $credit_allowed || ( 'preview' === $context && apply_filters( 'veila_show_credit', true, $s ) ) ) {
-			$parts[] = '<span class="veila-credit"' . ( $credit_allowed ? '' : ' hidden' ) . '>' . esc_html__( 'Made with Veila', 'veila' ) . '</span>';
+			$parts[] = '<span class="veila-credit"' . ( $credit_allowed ? '' : ' hidden' ) . '>' . esc_html__( 'Made with Veila', 'sanctoria-veila' ) . '</span>';
 		}
 		echo '<footer class="veila-footer">' . implode( '', $parts ) . '</footer>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Parts escaped above.
 	}

@@ -1,14 +1,14 @@
-=== Veila – Coming Soon & Maintenance Mode ===
+=== Sanctoria Veila – Coming Soon & Maintenance Mode ===
 Contributors: sanctoria
 Tags: maintenance mode, coming soon, under construction, maintenance, launch page
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Coming soon and maintenance mode pages with live preview and correct HTTP status. No remote assets. Settings: Appearance > Veila.
+Coming soon and maintenance mode pages with live preview and correct HTTP status. No remote assets. Settings: Appearance > Sanctoria Veila.
 
 == Description ==
 
@@ -101,6 +101,11 @@ Deactivate and delete the plugin. Uninstall removes its settings. Images you upl
 6. The Veila Night starter in maintenance mode, on a phone.
 
 == Changelog ==
+
+= 1.0.1 =
+* Renamed to Sanctoria Veila – Coming Soon & Maintenance Mode. The plugin folder and text domain are now `sanctoria-veila`. The plugin header name and readme title match.
+* The admin menu title is “Sanctoria Veila.” The menu slug stays `veila` (Appearance → Sanctoria Veila, URL `themes.php?page=veila`) so existing settings links keep working.
+* Internal prefixes, option names and starter palettes (Veila Ivory, Veila Night) are unchanged.
 
 = 1.0.0 =
 * Initial release.

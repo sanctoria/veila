@@ -39,7 +39,7 @@ class Veila_Admin {
 		 *
 		 * @param string $label Label.
 		 */
-		return (string) apply_filters( 'veila_menu_label', __( 'Veila', 'veila' ) );
+		return (string) apply_filters( 'veila_menu_label', __( 'Sanctoria Veila', 'sanctoria-veila' ) );
 	}
 
 	/**
@@ -74,7 +74,7 @@ class Veila_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return $links;
 		}
-		$settings = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'veila' ) . '</a>';
+		$settings = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'sanctoria-veila' ) . '</a>';
 		array_unshift( $links, $settings );
 		return $links;
 	}
@@ -93,7 +93,7 @@ class Veila_Admin {
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return $links;
 		}
-		$links[] = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'veila' ) . '</a>';
+		$links[] = '<a href="' . esc_url( self::settings_url() ) . '">' . esc_html__( 'Settings', 'sanctoria-veila' ) . '</a>';
 		return $links;
 	}
 
@@ -134,10 +134,10 @@ class Veila_Admin {
 					'coming_soon' => Veila_Render::default_badge( 'coming_soon' ),
 					'maintenance' => Veila_Render::default_badge( 'maintenance' ),
 				),
-				'mediaTitle'  => __( 'Select image', 'veila' ),
-				'mediaButton' => __( 'Use this image', 'veila' ),
-				'contrastLow' => __( 'Low contrast: Veila will use a more readable text color on the live page.', 'veila' ),
-				'contrastOk'  => __( 'Text contrast passes WCAG AA.', 'veila' ),
+				'mediaTitle'  => __( 'Select image', 'sanctoria-veila' ),
+				'mediaButton' => __( 'Use this image', 'sanctoria-veila' ),
+				'contrastLow' => __( 'Low contrast: Sanctoria Veila will use a more readable text color on the live page.', 'sanctoria-veila' ),
+				'contrastOk'  => __( 'Text contrast passes WCAG AA.', 'sanctoria-veila' ),
 				'freeTabs'    => array_keys( self::free_tabs() ),
 			)
 		);
@@ -150,11 +150,11 @@ class Veila_Admin {
 	 */
 	public static function free_tabs() {
 		return array(
-			'status'   => __( 'Status', 'veila' ),
-			'design'   => __( 'Design', 'veila' ),
-			'content'  => __( 'Content', 'veila' ),
-			'seo'      => __( 'SEO & social', 'veila' ),
-			'advanced' => __( 'Advanced', 'veila' ),
+			'status'   => __( 'Status', 'sanctoria-veila' ),
+			'design'   => __( 'Design', 'sanctoria-veila' ),
+			'content'  => __( 'Content', 'sanctoria-veila' ),
+			'seo'      => __( 'SEO & social', 'sanctoria-veila' ),
+			'advanced' => __( 'Advanced', 'sanctoria-veila' ),
 		);
 	}
 
@@ -163,7 +163,7 @@ class Veila_Admin {
 	 */
 	public static function apply_starter() {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_die( esc_html__( 'You do not have permission to do this.', 'veila' ) );
+			wp_die( esc_html__( 'You do not have permission to do this.', 'sanctoria-veila' ) );
 		}
 		check_admin_referer( 'veila_apply_starter' );
 		$key      = isset( $_GET['starter'] ) ? sanitize_key( wp_unslash( $_GET['starter'] ) ) : '';
@@ -201,7 +201,7 @@ class Veila_Admin {
 			return;
 		}
 		if ( Veila_Gate::kill_switch() ) {
-			echo '<div class="notice notice-warning"><p>' . esc_html__( 'Veila is switched off by VEILA_DISABLE in wp-config.php. Visitors see the normal site until that line is removed.', 'veila' ) . '</p></div>';
+			echo '<div class="notice notice-warning"><p>' . esc_html__( 'Sanctoria Veila is switched off by VEILA_DISABLE in wp-config.php. Visitors see the normal site until that line is removed.', 'sanctoria-veila' ) . '</p></div>';
 		}
 	}
 
@@ -229,7 +229,7 @@ class Veila_Admin {
 		<div class="wrap veila-wrap">
 			<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 			<?php if ( 'starter' === $msg ) : ?>
-				<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Template applied. You can keep editing below.', 'veila' ); ?></p></div>
+				<div class="notice notice-success is-dismissible"><p><?php esc_html_e( 'Template applied. You can keep editing below.', 'sanctoria-veila' ); ?></p></div>
 			<?php endif; ?>
 			<?php
 			/**
@@ -239,23 +239,23 @@ class Veila_Admin {
 			 */
 			do_action( 'veila_settings_notices', $msg );
 			?>
-			<p class="veila-lead"><?php esc_html_e( 'Show visitors a coming-soon or maintenance page while you work. Logged-in administrators keep seeing the real site. Nothing is sent to an external service.', 'veila' ); ?></p>
+			<p class="veila-lead"><?php esc_html_e( 'Show visitors a coming-soon or maintenance page while you work. Logged-in administrators keep seeing the real site. Nothing is sent to an external service.', 'sanctoria-veila' ); ?></p>
 
 			<div class="veila-status-strip veila-status-strip-<?php echo esc_attr( $mode ); ?>">
-				<strong><?php esc_html_e( 'Right now:', 'veila' ); ?></strong>
+				<strong><?php esc_html_e( 'Right now:', 'sanctoria-veila' ); ?></strong>
 				<?php
 				if ( 'maintenance' === $mode ) {
-					esc_html_e( 'Maintenance mode is on. Visitors get HTTP 503 and the splash page.', 'veila' );
+					esc_html_e( 'Maintenance mode is on. Visitors get HTTP 503 and the splash page.', 'sanctoria-veila' );
 				} elseif ( 'coming_soon' === $mode ) {
-					esc_html_e( 'Coming soon mode is on. Visitors see the splash page.', 'veila' );
+					esc_html_e( 'Coming soon mode is on. Visitors see the splash page.', 'sanctoria-veila' );
 				} else {
-					esc_html_e( 'Veila is off. Visitors see the normal site.', 'veila' );
+					esc_html_e( 'Sanctoria Veila is off. Visitors see the normal site.', 'sanctoria-veila' );
 				}
 				?>
 			</div>
 
 			<div class="veila-starters">
-				<span><?php esc_html_e( 'Start from a template:', 'veila' ); ?></span>
+				<span><?php esc_html_e( 'Start from a template:', 'sanctoria-veila' ); ?></span>
 				<?php foreach ( $starters as $key => $starter ) : ?>
 					<a class="button<?php echo $s['template'] === $key ? ' veila-current' : ''; ?>" href="<?php echo esc_url( wp_nonce_url( add_query_arg( array( 'action' => 'veila_apply_starter', 'starter' => $key ), admin_url( 'admin-post.php' ) ), 'veila_apply_starter' ) ); ?>"><?php echo esc_html( $starter['label'] ); ?></a>
 				<?php endforeach; ?>
@@ -264,7 +264,7 @@ class Veila_Admin {
 
 			<div class="veila-layout">
 				<div class="veila-main-col">
-					<nav class="veila-tabs" aria-label="<?php esc_attr_e( 'Settings sections', 'veila' ); ?>">
+					<nav class="veila-tabs" aria-label="<?php esc_attr_e( 'Settings sections', 'sanctoria-veila' ); ?>">
 						<?php foreach ( $tabs as $id => $label ) : ?>
 							<a href="#veila-tab-<?php echo esc_attr( $id ); ?>" class="veila-tab<?php echo $active === $id ? ' is-active' : ''; ?>" data-tab="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $label ); ?></a>
 						<?php endforeach; ?>
@@ -275,53 +275,53 @@ class Veila_Admin {
 						<input type="hidden" name="<?php echo esc_attr( Veila_Settings::OPTION ); ?>[template]" value="<?php echo esc_attr( $s['template'] ); ?>" />
 
 						<div id="veila-tab-status" class="veila-panel is-active">
-							<?php self::field_radio( 'mode', __( 'Mode', 'veila' ), $s['mode'], Veila_Settings::modes() ); ?>
-							<p class="description veila-mode-help"><?php esc_html_e( 'Coming soon is for a site that has not launched yet. Maintenance is for short planned work on a live site: it tells search engines to come back later instead of dropping your pages.', 'veila' ); ?></p>
-							<?php self::field_checkbox( 'noindex', __( 'Ask search engines not to index the coming-soon page (noindex)', 'veila' ), $s['noindex'] ); ?>
-							<?php self::field_number( 'retry_after', __( 'Maintenance Retry-After (minutes)', 'veila' ), $s['retry_after'], 1, 10080, __( 'Sent with HTTP 503 so search engines know when to try again.', 'veila' ) ); ?>
-							<?php self::field_select( 'bypass_cap', __( 'Who sees the real site', 'veila' ), $s['bypass_cap'], Veila_Settings::bypass_caps() ); ?>
+							<?php self::field_radio( 'mode', __( 'Mode', 'sanctoria-veila' ), $s['mode'], Veila_Settings::modes() ); ?>
+							<p class="description veila-mode-help"><?php esc_html_e( 'Coming soon is for a site that has not launched yet. Maintenance is for short planned work on a live site: it tells search engines to come back later instead of dropping your pages.', 'sanctoria-veila' ); ?></p>
+							<?php self::field_checkbox( 'noindex', __( 'Ask search engines not to index the coming-soon page (noindex)', 'sanctoria-veila' ), $s['noindex'] ); ?>
+							<?php self::field_number( 'retry_after', __( 'Maintenance Retry-After (minutes)', 'sanctoria-veila' ), $s['retry_after'], 1, 10080, __( 'Sent with HTTP 503 so search engines know when to try again.', 'sanctoria-veila' ) ); ?>
+							<?php self::field_select( 'bypass_cap', __( 'Who sees the real site', 'sanctoria-veila' ), $s['bypass_cap'], Veila_Settings::bypass_caps() ); ?>
 							<div class="veila-info">
-								<p><strong><?php esc_html_e( 'Always reachable:', 'veila' ); ?></strong> <?php esc_html_e( 'the dashboard, wp-login.php, the REST API, wp-cron.php, admin-ajax.php, XML-RPC, robots.txt, and WP-CLI. Feeds and sitemaps get a short plain-text reply (503 in maintenance, 404 while coming soon).', 'veila' ); ?></p>
-								<p><strong><?php esc_html_e( 'Emergency off switch:', 'veila' ); ?></strong> <?php esc_html_e( 'add this line to wp-config.php to turn Veila off without logging in:', 'veila' ); ?> <code>define( 'VEILA_DISABLE', true );</code></p>
+								<p><strong><?php esc_html_e( 'Always reachable:', 'sanctoria-veila' ); ?></strong> <?php esc_html_e( 'the dashboard, wp-login.php, the REST API, wp-cron.php, admin-ajax.php, XML-RPC, robots.txt, and WP-CLI. Feeds and sitemaps get a short plain-text reply (503 in maintenance, 404 while coming soon).', 'sanctoria-veila' ); ?></p>
+								<p><strong><?php esc_html_e( 'Emergency off switch:', 'sanctoria-veila' ); ?></strong> <?php esc_html_e( 'add this line to wp-config.php to turn Veila off without logging in:', 'sanctoria-veila' ); ?> <code>define( 'VEILA_DISABLE', true );</code></p>
 							</div>
 						</div>
 
 						<div id="veila-tab-design" class="veila-panel">
-							<?php self::field_select( 'layout', __( 'Layout', 'veila' ), $s['layout'], Veila_Settings::layouts() ); ?>
-							<?php self::field_media( 'logo_id', __( 'Logo (for light backgrounds)', 'veila' ), $s['logo_id'] ); ?>
-							<?php self::field_media( 'logo_id_dark', __( 'Logo (for dark backgrounds)', 'veila' ), $s['logo_id_dark'] ); ?>
-							<p class="description veila-under"><?php esc_html_e( 'Use a transparent PNG or SVG. Veila picks the dark-background logo automatically when the page behind the text is dark.', 'veila' ); ?></p>
-							<?php self::field_number( 'logo_width', __( 'Logo width (px)', 'veila' ), $s['logo_width'], 32, 480 ); ?>
-							<?php self::field_select( 'bg_type', __( 'Background type', 'veila' ), $s['bg_type'], array( 'color' => __( 'Solid color', 'veila' ), 'gradient' => __( 'Gradient', 'veila' ), 'image' => __( 'Image', 'veila' ) ) ); ?>
-							<?php self::field_color( 'bg_color', __( 'Background color', 'veila' ), $s['bg_color'] ); ?>
-							<?php self::field_color( 'bg_color_2', __( 'Gradient second color', 'veila' ), $s['bg_color_2'] ); ?>
-							<?php self::field_number( 'bg_gradient_angle', __( 'Gradient angle', 'veila' ), $s['bg_gradient_angle'], 0, 360 ); ?>
-							<?php self::field_media( 'bg_image_id', __( 'Background image', 'veila' ), $s['bg_image_id'] ); ?>
-							<?php self::field_number( 'overlay_opacity', __( 'Image darkening (%)', 'veila' ), $s['overlay_opacity'], 0, 90, __( 'Darkens a full-screen background image so text stays readable.', 'veila' ) ); ?>
-							<?php self::field_color( 'heading_color', __( 'Headline color', 'veila' ), $s['heading_color'] ); ?>
-							<?php self::field_color( 'text_color', __( 'Text color', 'veila' ), $s['text_color'] ); ?>
-							<?php self::field_color( 'accent_color', __( 'Accent color', 'veila' ), $s['accent_color'] ); ?>
-							<?php self::field_color( 'card_bg', __( 'Card background (Card layout)', 'veila' ), $s['card_bg'] ); ?>
-							<?php self::field_select( 'font_stack', __( 'Typeface', 'veila' ), $s['font_stack'], wp_list_pluck( Veila_Settings::font_stacks(), 'label' ) ); ?>
-							<?php self::field_number( 'heading_size', __( 'Headline size (px)', 'veila' ), $s['heading_size'], 20, 96 ); ?>
-							<?php self::field_select( 'text_align', __( 'Text alignment', 'veila' ), $s['text_align'], array( 'center' => __( 'Centered', 'veila' ), 'left' => __( 'Left', 'veila' ) ) ); ?>
-							<p class="description"><?php esc_html_e( 'Typefaces use fonts already on the visitor’s device. Nothing is loaded from Google or any other website.', 'veila' ); ?></p>
+							<?php self::field_select( 'layout', __( 'Layout', 'sanctoria-veila' ), $s['layout'], Veila_Settings::layouts() ); ?>
+							<?php self::field_media( 'logo_id', __( 'Logo (for light backgrounds)', 'sanctoria-veila' ), $s['logo_id'] ); ?>
+							<?php self::field_media( 'logo_id_dark', __( 'Logo (for dark backgrounds)', 'sanctoria-veila' ), $s['logo_id_dark'] ); ?>
+							<p class="description veila-under"><?php esc_html_e( 'Use a transparent PNG or SVG. Veila picks the dark-background logo automatically when the page behind the text is dark.', 'sanctoria-veila' ); ?></p>
+							<?php self::field_number( 'logo_width', __( 'Logo width (px)', 'sanctoria-veila' ), $s['logo_width'], 32, 480 ); ?>
+							<?php self::field_select( 'bg_type', __( 'Background type', 'sanctoria-veila' ), $s['bg_type'], array( 'color' => __( 'Solid color', 'sanctoria-veila' ), 'gradient' => __( 'Gradient', 'sanctoria-veila' ), 'image' => __( 'Image', 'sanctoria-veila' ) ) ); ?>
+							<?php self::field_color( 'bg_color', __( 'Background color', 'sanctoria-veila' ), $s['bg_color'] ); ?>
+							<?php self::field_color( 'bg_color_2', __( 'Gradient second color', 'sanctoria-veila' ), $s['bg_color_2'] ); ?>
+							<?php self::field_number( 'bg_gradient_angle', __( 'Gradient angle', 'sanctoria-veila' ), $s['bg_gradient_angle'], 0, 360 ); ?>
+							<?php self::field_media( 'bg_image_id', __( 'Background image', 'sanctoria-veila' ), $s['bg_image_id'] ); ?>
+							<?php self::field_number( 'overlay_opacity', __( 'Image darkening (%)', 'sanctoria-veila' ), $s['overlay_opacity'], 0, 90, __( 'Darkens a full-screen background image so text stays readable.', 'sanctoria-veila' ) ); ?>
+							<?php self::field_color( 'heading_color', __( 'Headline color', 'sanctoria-veila' ), $s['heading_color'] ); ?>
+							<?php self::field_color( 'text_color', __( 'Text color', 'sanctoria-veila' ), $s['text_color'] ); ?>
+							<?php self::field_color( 'accent_color', __( 'Accent color', 'sanctoria-veila' ), $s['accent_color'] ); ?>
+							<?php self::field_color( 'card_bg', __( 'Card background (Card layout)', 'sanctoria-veila' ), $s['card_bg'] ); ?>
+							<?php self::field_select( 'font_stack', __( 'Typeface', 'sanctoria-veila' ), $s['font_stack'], wp_list_pluck( Veila_Settings::font_stacks(), 'label' ) ); ?>
+							<?php self::field_number( 'heading_size', __( 'Headline size (px)', 'sanctoria-veila' ), $s['heading_size'], 20, 96 ); ?>
+							<?php self::field_select( 'text_align', __( 'Text alignment', 'sanctoria-veila' ), $s['text_align'], array( 'center' => __( 'Centered', 'sanctoria-veila' ), 'left' => __( 'Left', 'sanctoria-veila' ) ) ); ?>
+							<p class="description"><?php esc_html_e( 'Typefaces use fonts already on the visitor’s device. Nothing is loaded from Google or any other website.', 'sanctoria-veila' ); ?></p>
 						</div>
 
 						<div id="veila-tab-content" class="veila-panel">
-							<?php self::field_checkbox( 'show_badge', __( 'Show the small label above the headline', 'veila' ), $s['show_badge'] ); ?>
-							<?php self::field_text( 'badge', __( 'Label text', 'veila' ), $s['badge'], __( 'Leave empty for “Coming soon” or “Down for maintenance”', 'veila' ) ); ?>
-							<?php self::field_text( 'headline', __( 'Headline', 'veila' ), $s['headline'] ); ?>
-							<?php self::field_textarea( 'message', __( 'Message', 'veila' ), $s['message'], __( 'Plain text. Links, bold, and italics are allowed.', 'veila' ), 'large-text', 5 ); ?>
-							<?php self::field_text( 'footer_text', __( 'Footer text', 'veila' ), $s['footer_text'], '© ' . gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?>
-							<?php self::field_checkbox( 'show_login_link', __( 'Show a “Log in” link in the footer', 'veila' ), $s['show_login_link'] ); ?>
+							<?php self::field_checkbox( 'show_badge', __( 'Show the small label above the headline', 'sanctoria-veila' ), $s['show_badge'] ); ?>
+							<?php self::field_text( 'badge', __( 'Label text', 'sanctoria-veila' ), $s['badge'], __( 'Leave empty for “Coming soon” or “Down for maintenance”', 'sanctoria-veila' ) ); ?>
+							<?php self::field_text( 'headline', __( 'Headline', 'sanctoria-veila' ), $s['headline'] ); ?>
+							<?php self::field_textarea( 'message', __( 'Message', 'sanctoria-veila' ), $s['message'], __( 'Plain text. Links, bold, and italics are allowed.', 'sanctoria-veila' ), 'large-text', 5 ); ?>
+							<?php self::field_text( 'footer_text', __( 'Footer text', 'sanctoria-veila' ), $s['footer_text'], '© ' . gmdate( 'Y' ) . ' ' . get_bloginfo( 'name' ) ); ?>
+							<?php self::field_checkbox( 'show_login_link', __( 'Show a “Log in” link in the footer', 'sanctoria-veila' ), $s['show_login_link'] ); ?>
 						</div>
 
 						<div id="veila-tab-seo" class="veila-panel">
-							<?php self::field_text( 'seo_title', __( 'Page title', 'veila' ), $s['seo_title'], get_bloginfo( 'name' ) . ' — ' . __( 'Coming soon', 'veila' ) ); ?>
-							<?php self::field_textarea( 'seo_description', __( 'Meta description', 'veila' ), $s['seo_description'], __( 'Shown by search engines and link previews. About 150 characters.', 'veila' ), 'large-text', 3 ); ?>
-							<p class="description veila-under"><?php esc_html_e( 'The favicon comes from your Site Icon (Settings > General).', 'veila' ); ?></p>
-							<h2 class="veila-subhead"><?php esc_html_e( 'Social links', 'veila' ); ?></h2>
+							<?php self::field_text( 'seo_title', __( 'Page title', 'sanctoria-veila' ), $s['seo_title'], get_bloginfo( 'name' ) . ' — ' . __( 'Coming soon', 'sanctoria-veila' ) ); ?>
+							<?php self::field_textarea( 'seo_description', __( 'Meta description', 'sanctoria-veila' ), $s['seo_description'], __( 'Shown by search engines and link previews. About 150 characters.', 'sanctoria-veila' ), 'large-text', 3 ); ?>
+							<p class="description veila-under"><?php esc_html_e( 'The favicon comes from your Site Icon (Settings > General).', 'sanctoria-veila' ); ?></p>
+							<h2 class="veila-subhead"><?php esc_html_e( 'Social links', 'sanctoria-veila' ); ?></h2>
 							<?php
 							foreach ( Veila_Settings::socials() as $net => $label ) {
 								self::field_text( 'social_' . $net, $label, $s[ 'social_' . $net ], 'email' === $net ? 'hello@example.com' : 'https://', 'email' === $net ? 'email' : 'url' );
@@ -330,15 +330,15 @@ class Veila_Admin {
 						</div>
 
 						<div id="veila-tab-advanced" class="veila-panel">
-							<?php self::field_textarea( 'custom_css', __( 'Custom CSS', 'veila' ), $s['custom_css'], __( 'Added only on the splash page. Do not paste scripts here.', 'veila' ), 'large-text code', 8 ); ?>
-							<?php self::field_checkbox( 'show_credit', __( 'Show a small “Made with Veila” note in the footer (off by default)', 'veila' ), $s['show_credit'] ); ?>
+							<?php self::field_textarea( 'custom_css', __( 'Custom CSS', 'sanctoria-veila' ), $s['custom_css'], __( 'Added only on the splash page. Do not paste scripts here.', 'sanctoria-veila' ), 'large-text code', 8 ); ?>
+							<?php self::field_checkbox( 'show_credit', __( 'Show a small “Made with Veila” note in the footer (off by default)', 'sanctoria-veila' ), $s['show_credit'] ); ?>
 							<div class="veila-info">
-								<p><strong><?php esc_html_e( 'Caching:', 'veila' ); ?></strong> <?php esc_html_e( 'The splash page is sent with no-cache headers, and Veila asks common cache plugins (LiteSpeed, WP Rocket, W3 Total Cache, WP Super Cache, SiteGround, Breeze, Cache Enabler, WP Fastest Cache, Nginx Helper) to purge whenever you save. If you use a CDN, purge it after switching modes.', 'veila' ); ?></p>
-								<p><a class="button" href="<?php echo esc_url( Veila_Gate::preview_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open the real splash page (preview)', 'veila' ); ?></a></p>
+								<p><strong><?php esc_html_e( 'Caching:', 'sanctoria-veila' ); ?></strong> <?php esc_html_e( 'The splash page is sent with no-cache headers, and Veila asks common cache plugins (LiteSpeed, WP Rocket, W3 Total Cache, WP Super Cache, SiteGround, Breeze, Cache Enabler, WP Fastest Cache, Nginx Helper) to purge whenever you save. If you use a CDN, purge it after switching modes.', 'sanctoria-veila' ); ?></p>
+								<p><a class="button" href="<?php echo esc_url( Veila_Gate::preview_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Open the real splash page (preview)', 'sanctoria-veila' ); ?></a></p>
 							</div>
 						</div>
 
-						<?php submit_button( __( 'Save changes', 'veila' ) ); ?>
+						<?php submit_button( __( 'Save changes', 'sanctoria-veila' ) ); ?>
 					</form>
 
 					<?php
@@ -349,8 +349,8 @@ class Veila_Admin {
 
 				<div class="veila-preview-col">
 					<div class="veila-preview-toolbar">
-						<strong><?php esc_html_e( 'Live preview', 'veila' ); ?></strong>
-						<a href="<?php echo esc_url( Veila_Gate::preview_url() ); ?>" target="_blank" rel="noopener noreferrer" id="veila-open-preview"><?php esc_html_e( 'Open full page', 'veila' ); ?></a>
+						<strong><?php esc_html_e( 'Live preview', 'sanctoria-veila' ); ?></strong>
+						<a href="<?php echo esc_url( Veila_Gate::preview_url() ); ?>" target="_blank" rel="noopener noreferrer" id="veila-open-preview"><?php esc_html_e( 'Open full page', 'sanctoria-veila' ); ?></a>
 					</div>
 					<div class="veila-preview" id="veila-preview">
 						<?php Veila_Render::markup( $s, 'maintenance' === $s['mode'] ? 'maintenance' : 'coming_soon', 'preview' ); ?>
@@ -364,8 +364,8 @@ class Veila_Admin {
 			if ( ! $dismissed && ! defined( 'VEILA_PRO_VERSION' ) ) :
 				?>
 				<div class="veila-upsell" id="veila-upsell">
-					<p><?php esc_html_e( 'Veila Pro adds a template library, a countdown that can launch your site on time, an on-site email signup list with CSV export, secret preview links for clients, role and IP access, page rules, scheduling, video backgrounds, local fonts, and white-label tools. It is a one-time purchase: Veila Pro ($20, one site, three years of updates), Veila Pro Trinity ($50, three sites, lifetime updates), or Veila Pro Infinity ($99, unlimited sites, lifetime updates). The free plugin stays fully usable on its own.', 'veila' ); ?></p>
-					<button type="button" class="button-link" id="veila-dismiss-upsell" data-nonce="<?php echo esc_attr( wp_create_nonce( 'veila_dismiss_upsell' ) ); ?>"><?php esc_html_e( 'Dismiss', 'veila' ); ?></button>
+					<p><?php esc_html_e( 'Veila Pro adds a template library, a countdown that can launch your site on time, an on-site email signup list with CSV export, secret preview links for clients, role and IP access, page rules, scheduling, video backgrounds, local fonts, and white-label tools. It is a one-time purchase: Veila Pro ($20, one site, three years of updates), Veila Pro Trinity ($50, three sites, lifetime updates), or Veila Pro Infinity ($99, unlimited sites, lifetime updates). The free plugin stays fully usable on its own.', 'sanctoria-veila' ); ?></p>
+					<button type="button" class="button-link" id="veila-dismiss-upsell" data-nonce="<?php echo esc_attr( wp_create_nonce( 'veila_dismiss_upsell' ) ); ?>"><?php esc_html_e( 'Dismiss', 'sanctoria-veila' ); ?></button>
 				</div>
 			<?php endif; ?>
 		</div>
@@ -576,8 +576,8 @@ class Veila_Admin {
 			$html .= '<img src="' . esc_url( $url ) . '" alt="" />';
 		}
 		$html .= '</div>';
-		$html .= '<button type="button" class="button veila-media-select">' . esc_html__( 'Choose image', 'veila' ) . '</button> ';
-		$html .= '<button type="button" class="button-link veila-media-clear">' . esc_html__( 'Remove', 'veila' ) . '</button></div>';
+		$html .= '<button type="button" class="button veila-media-select">' . esc_html__( 'Choose image', 'sanctoria-veila' ) . '</button> ';
+		$html .= '<button type="button" class="button-link veila-media-clear">' . esc_html__( 'Remove', 'sanctoria-veila' ) . '</button></div>';
 		self::row( $label, $html, $name );
 	}
 

@@ -55,7 +55,7 @@ do_action( 'veila_splash_head', $veila_settings, $veila_mode );
 </head>
 <body class="veila-body">
 <?php if ( $veila_preview ) : ?>
-<div class="veila-preview-flag" role="status"><?php esc_html_e( 'Preview — only administrators can see this page right now.', 'veila' ); ?></div>
+<div class="veila-preview-flag" role="status"><?php esc_html_e( 'Preview — only administrators can see this page right now.', 'sanctoria-veila' ); ?></div>
 <?php endif; ?>
 <?php Veila_Render::markup( $veila_settings, $veila_mode, 'front' ); ?>
 <?php

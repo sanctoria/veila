@@ -1,6 +1,8 @@
-# Veila
+# Sanctoria Veila
 
-Veila is a free WordPress plugin for a coming-soon or maintenance page, with a live preview, starter templates, and the correct HTTP status codes (200 for coming soon, 503 with Retry-After for maintenance). It is off until you turn it on. No ads, no accounts, and no external services. Settings: Appearance → Veila.
+Sanctoria Veila is a free WordPress plugin for a coming-soon or maintenance page, with a live preview, starter templates, and the correct HTTP status codes (200 for coming soon, 503 with Retry-After for maintenance). It is off until you turn it on. No ads, no accounts, and no external services. Settings: Appearance → Sanctoria Veila.
+
+The plugin slug and folder are `sanctoria-veila` (version 1.0.1).
 
 ## Requirements
 
@@ -10,11 +12,11 @@ Veila is a free WordPress plugin for a coming-soon or maintenance page, with a l
 
 ## Installation
 
-Once the plugin is listed on [WordPress.org](https://wordpress.org/plugins/), you can install it from Plugins → Add New. Until then, download the zip from [Releases](https://github.com/sanctoria/veila/releases) and upload it under Plugins → Add New → Upload Plugin.
+Sanctoria Veila is not yet listed on [WordPress.org](https://wordpress.org/plugins/). Download the zip from [Releases](https://github.com/sanctoria/veila/releases) or from the [product page](https://sanctoria.com/plugins/veila/) and upload it under Plugins → Add New → Upload Plugin.
 
-## Optional Pro upgrade
+## Optional Pro add-on
 
-An optional Pro upgrade, [Veila Pro](https://sanctoria.com/plugins/veila/), is available. It adds:
+An optional Pro add-on, [Sanctoria Veila Pro](https://sanctoria.com/plugins/veila/), is sold on the Sanctoria Veila product page. It adds:
 
 - Eleven more templates (Harbor, Linen, Glass, Paper, Meadow, Sunset, Midnight, Slate, Coral, Rose, and Sanctum), each with matching fonts
 - Ten bundled fonts served from your own site, plus a .woff2 upload
@@ -30,8 +32,9 @@ An optional Pro upgrade, [Veila Pro](https://sanctoria.com/plugins/veila/), is a
 
 ## License
 
-Veila is licensed under the [GNU General Public License v2 or later](LICENSE).
+Sanctoria Veila is licensed under the [GNU General Public License v2 or later](LICENSE).
 
 ## Links
 
+- [Product page](https://sanctoria.com/plugins/veila/)
 - [sanctoria.com](https://sanctoria.com)

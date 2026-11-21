@@ -57,8 +57,8 @@ class Veila_Settings {
 			'logo_width'         => 160,
 			'show_badge'         => 1,
 			'badge'              => '',
-			'headline'           => __( 'Something new is on the way', 'veila' ),
-			'message'            => __( 'We are putting the finishing touches on our new site. Please check back soon.', 'veila' ),
+			'headline'           => __( 'Something new is on the way', 'sanctoria-veila' ),
+			'message'            => __( 'We are putting the finishing touches on our new site. Please check back soon.', 'sanctoria-veila' ),
 			'bg_type'            => 'color',
 			'bg_color'           => '#FBF8F1',
 			'bg_color_2'         => '#F5EFE2',
@@ -135,9 +135,9 @@ class Veila_Settings {
 	 */
 	public static function modes() {
 		return array(
-			'off'         => __( 'Off — visitors see the normal site', 'veila' ),
-			'coming_soon' => __( 'Coming soon — HTTP 200, can be indexed', 'veila' ),
-			'maintenance' => __( 'Maintenance — HTTP 503 with Retry-After', 'veila' ),
+			'off'         => __( 'Off — visitors see the normal site', 'sanctoria-veila' ),
+			'coming_soon' => __( 'Coming soon — HTTP 200, can be indexed', 'sanctoria-veila' ),
+			'maintenance' => __( 'Maintenance — HTTP 503 with Retry-After', 'sanctoria-veila' ),
 		);
 	}
 
@@ -148,11 +148,11 @@ class Veila_Settings {
 	 */
 	public static function bypass_caps() {
 		return array(
-			'manage_options'    => __( 'Administrators (manage_options)', 'veila' ),
-			'edit_others_posts' => __( 'Editors and above (edit_others_posts)', 'veila' ),
-			'publish_posts'     => __( 'Authors and above (publish_posts)', 'veila' ),
-			'edit_posts'        => __( 'Contributors and above (edit_posts)', 'veila' ),
-			'read'              => __( 'Any logged-in user (read)', 'veila' ),
+			'manage_options'    => __( 'Administrators (manage_options)', 'sanctoria-veila' ),
+			'edit_others_posts' => __( 'Editors and above (edit_others_posts)', 'sanctoria-veila' ),
+			'publish_posts'     => __( 'Authors and above (publish_posts)', 'sanctoria-veila' ),
+			'edit_posts'        => __( 'Contributors and above (edit_posts)', 'sanctoria-veila' ),
+			'read'              => __( 'Any logged-in user (read)', 'sanctoria-veila' ),
 		);
 	}
 
@@ -163,10 +163,10 @@ class Veila_Settings {
 	 */
 	public static function layouts() {
 		return array(
-			'centered' => __( 'Centered', 'veila' ),
-			'card'     => __( 'Card', 'veila' ),
-			'split'    => __( 'Split (image beside text)', 'veila' ),
-			'minimal'  => __( 'Minimal (left aligned)', 'veila' ),
+			'centered' => __( 'Centered', 'sanctoria-veila' ),
+			'card'     => __( 'Card', 'sanctoria-veila' ),
+			'split'    => __( 'Split (image beside text)', 'sanctoria-veila' ),
+			'minimal'  => __( 'Minimal (left aligned)', 'sanctoria-veila' ),
 		);
 	}
 
@@ -178,19 +178,19 @@ class Veila_Settings {
 	public static function font_stacks() {
 		$stacks = array(
 			'serif'    => array(
-				'label' => __( 'Classic serif', 'veila' ),
+				'label' => __( 'Classic serif', 'sanctoria-veila' ),
 				'stack' => '"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif',
 			),
 			'sans'     => array(
-				'label' => __( 'System sans-serif', 'veila' ),
+				'label' => __( 'System sans-serif', 'sanctoria-veila' ),
 				'stack' => 'system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif',
 			),
 			'humanist' => array(
-				'label' => __( 'Humanist sans-serif', 'veila' ),
+				'label' => __( 'Humanist sans-serif', 'sanctoria-veila' ),
 				'stack' => 'Seravek,"Gill Sans Nova",Ubuntu,Calibri,"DejaVu Sans",source-sans-pro,sans-serif',
 			),
 			'mono'     => array(
-				'label' => __( 'Monospace', 'veila' ),
+				'label' => __( 'Monospace', 'sanctoria-veila' ),
 				'stack' => 'ui-monospace,"Cascadia Code","Source Code Pro",Menlo,Consolas,"DejaVu Sans Mono",monospace',
 			),
 		);
@@ -217,7 +217,7 @@ class Veila_Settings {
 			'youtube'   => 'YouTube',
 			'tiktok'    => 'TikTok',
 			'github'    => 'GitHub',
-			'email'     => __( 'Email', 'veila' ),
+			'email'     => __( 'Email', 'sanctoria-veila' ),
 		);
 	}
 
@@ -377,7 +377,7 @@ class Veila_Settings {
 	public static function starters() {
 		$starters = array(
 			'veila_ivory' => array(
-				'label'           => __( 'Veila Ivory', 'veila' ),
+				'label'           => __( 'Veila Ivory', 'sanctoria-veila' ),
 				'layout'          => 'centered',
 				'bg_type'         => 'color',
 				'bg_color'        => '#FBF8F1',
@@ -392,7 +392,7 @@ class Veila_Settings {
 				'overlay_opacity' => 0,
 			),
 			'veila_night' => array(
-				'label'           => __( 'Veila Night', 'veila' ),
+				'label'           => __( 'Veila Night', 'sanctoria-veila' ),
 				'layout'          => 'centered',
 				'bg_type'         => 'gradient',
 				'bg_color'        => '#0F1A30',
@@ -408,7 +408,7 @@ class Veila_Settings {
 				'overlay_opacity' => 0,
 			),
 			'clean_light' => array(
-				'label'           => __( 'Clean Light', 'veila' ),
+				'label'           => __( 'Clean Light', 'sanctoria-veila' ),
 				'layout'          => 'card',
 				'bg_type'         => 'color',
 				'bg_color'        => '#F3F1EC',
@@ -422,7 +422,7 @@ class Veila_Settings {
 				'overlay_opacity' => 0,
 			),
 			'clean_dark' => array(
-				'label'           => __( 'Clean Dark', 'veila' ),
+				'label'           => __( 'Clean Dark', 'sanctoria-veila' ),
 				'layout'          => 'card',
 				'bg_type'         => 'gradient',
 				'bg_color'        => '#0F1720',
@@ -438,7 +438,7 @@ class Veila_Settings {
 				'overlay_opacity' => 0,
 			),
 			'minimal'    => array(
-				'label'           => __( 'Minimal', 'veila' ),
+				'label'           => __( 'Minimal', 'sanctoria-veila' ),
 				'layout'          => 'minimal',
 				'bg_type'         => 'color',
 				'bg_color'        => '#FFFFFF',

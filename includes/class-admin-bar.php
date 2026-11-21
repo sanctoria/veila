@@ -42,7 +42,7 @@ class Veila_Admin_Bar {
 			return;
 		}
 		$mode  = Veila_Gate::effective_mode();
-		$label = 'maintenance' === $mode ? __( 'Maintenance mode is on', 'veila' ) : __( 'Coming soon mode is on', 'veila' );
+		$label = 'maintenance' === $mode ? __( 'Maintenance mode is on', 'sanctoria-veila' ) : __( 'Coming soon mode is on', 'sanctoria-veila' );
 
 		/**
 		 * Filter the admin-bar label (white label can rename it).
@@ -58,7 +58,7 @@ class Veila_Admin_Bar {
 				'href'  => Veila_Admin::settings_url(),
 				'meta'  => array(
 					'class' => 'veila-status veila-status-' . sanitize_html_class( $mode ),
-					'title' => __( 'Visitors see the splash page. Click to change.', 'veila' ),
+					'title' => __( 'Visitors see the splash page. Click to change.', 'sanctoria-veila' ),
 				),
 			)
 		);
