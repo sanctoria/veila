@@ -18,9 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $veila_css_file = VEILA_DIR . 'assets/css/splash.css';
 wp_register_style( 'veila-splash', VEILA_URL . 'assets/css/splash.css', array(), file_exists( $veila_css_file ) ? (string) filemtime( $veila_css_file ) : VEILA_VERSION );
-if ( '' !== trim( (string) $veila_settings['custom_css'] ) ) {
-	wp_add_inline_style( 'veila-splash', $veila_settings['custom_css'] );
-}
 $veila_noindex = 'maintenance' === $veila_mode || ! empty( $veila_settings['noindex'] ) || $veila_preview;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

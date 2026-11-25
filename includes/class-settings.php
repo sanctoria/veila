@@ -85,7 +85,6 @@ class Veila_Settings {
 			'show_login_link'    => 0,
 			'show_credit'        => 0,
 			'footer_text'        => '',
-			'custom_css'         => '',
 		);
 
 		/**
@@ -107,6 +106,9 @@ class Veila_Settings {
 			$stored = array();
 		}
 		$settings = array_merge( self::defaults(), $stored );
+		// Custom CSS was removed for the WordPress.org guideline on arbitrary code insertion.
+		// Ignore a leftover value from 1.0.1; uninstall still deletes the whole option.
+		unset( $settings['custom_css'] );
 
 		/**
 		 * Filter saved Veila settings.
@@ -282,7 +284,6 @@ class Veila_Settings {
 		$out['show_login_link'] = empty( $input['show_login_link'] ) ? 0 : 1;
 		$out['show_credit']     = empty( $input['show_credit'] ) ? 0 : 1;
 		$out['footer_text']     = sanitize_text_field( $input['footer_text'] ?? '' );
-		$out['custom_css']      = self::sanitize_css( $input['custom_css'] ?? '' );
 
 		/**
 		 * Filter sanitized settings (Pro may add keys).
@@ -349,24 +350,6 @@ class Veila_Settings {
 		}
 		$sanitized = sanitize_hex_color( $color );
 		return $sanitized ? $sanitized : '';
-	}
-
-	/**
-	 * Conservative CSS sanitizer: strip tags, null bytes, @import, and script-like values.
-	 *
-	 * @param string $css CSS.
-	 * @return string
-	 */
-	public static function sanitize_css( $css ) {
-		$css = (string) $css;
-		$css = wp_check_invalid_utf8( $css );
-		$css = wp_strip_all_tags( $css );
-		$css = str_replace( "\0", '', $css );
-		$css = preg_replace( '/@import\b/i', '', $css );
-		$css = preg_replace( '/expression\s*\(/i', '', $css );
-		$css = preg_replace( '/javascript\s*:/i', '', $css );
-		$css = preg_replace( '/behavior\s*:/i', '', $css );
-		return $css;
 	}
 
 	/**

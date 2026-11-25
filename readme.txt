@@ -4,7 +4,7 @@ Tags: maintenance mode, coming soon, under construction, maintenance, launch pag
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,6 @@ Veila is off when you activate it. Nothing changes for visitors until you pick a
 * Headline, badge, and message (basic formatting and links allowed)
 * Social links (Facebook, X, Instagram, LinkedIn, YouTube, TikTok, GitHub, email) drawn as inline icons
 * Footer text and an optional "Log in" link
-* Custom CSS, applied only to the splash page
 * A live preview beside the settings, plus a full-page preview of either mode
 
 = SEO and access =
@@ -52,9 +51,9 @@ A separate Pro add-on (sold independently, not required) adds eleven more templa
 
 == Installation ==
 
-1. Upload the `veila` folder to the `/wp-content/plugins/` directory, or install the plugin through the Plugins screen.
-2. Activate Veila through the Plugins screen. Veila starts in the "Off" mode.
-3. Go to Appearance > Veila, pick a starter template, and set your logo, colors, and text.
+1. Upload the `sanctoria-veila` folder to the `/wp-content/plugins/` directory, or install the plugin through the Plugins screen.
+2. Activate Sanctoria Veila through the Plugins screen. It starts in the "Off" mode.
+3. Go to Appearance > Sanctoria Veila, pick a starter template, and set your logo, colors, and text.
 4. On the Status tab choose "Coming soon" or "Maintenance" and save. Open the site in a private window to see what visitors see.
 
 == Frequently Asked Questions ==
@@ -102,6 +101,10 @@ Deactivate and delete the plugin. Uninstall removes its settings. Images you upl
 
 == Changelog ==
 
+= 1.0.2 =
+* Removed the Custom CSS field from Advanced settings. The splash page no longer outputs stored custom CSS. A leftover value from 1.0.1 is ignored, and is deleted when the plugin is uninstalled.
+* The settings location is now consistently Appearance > Sanctoria Veila in the readme, matching the admin menu label.
+
 = 1.0.1 =
 * Renamed to Sanctoria Veila – Coming Soon & Maintenance Mode. The plugin folder and text domain are now `sanctoria-veila`. The plugin header name and readme title match.
 * The admin menu title is “Sanctoria Veila.” The menu slug stays `veila` (Appearance → Sanctoria Veila, URL `themes.php?page=veila`) so existing settings links keep working.
@@ -111,6 +114,9 @@ Deactivate and delete the plugin. Uninstall removes its settings. Images you upl
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Removes the Custom CSS field. The settings path in the readme is now Appearance > Sanctoria Veila throughout.
 
 = 1.0.0 =
 Initial release of Veila.

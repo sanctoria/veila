@@ -3,7 +3,7 @@
  * Plugin Name:       Sanctoria Veila – Coming Soon & Maintenance Mode
  * Plugin URI:        https://wordpress.org/plugins/sanctoria-veila/
  * Description:       A coming-soon and maintenance page for WordPress with a live preview, starter templates, and the right HTTP status codes. Off until you turn it on. No ads, no accounts, and no external services. Settings: Appearance > Sanctoria Veila.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Author:            Sanctoria
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'VEILA_VERSION', '1.0.1' );
+define( 'VEILA_VERSION', '1.0.2' );
 define( 'VEILA_FILE', __FILE__ );
 define( 'VEILA_DIR', plugin_dir_path( __FILE__ ) );
 define( 'VEILA_URL', plugin_dir_url( __FILE__ ) );

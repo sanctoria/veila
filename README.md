@@ -2,7 +2,7 @@
 
 Sanctoria Veila is a free WordPress plugin for a coming-soon or maintenance page, with a live preview, starter templates, and the correct HTTP status codes (200 for coming soon, 503 with Retry-After for maintenance). It is off until you turn it on. No ads, no accounts, and no external services. Settings: Appearance → Sanctoria Veila.
 
-The plugin slug and folder are `sanctoria-veila` (version 1.0.1).
+The plugin slug and folder are `sanctoria-veila` (version 1.0.2).
 
 ## Requirements
 
@@ -12,7 +12,7 @@ The plugin slug and folder are `sanctoria-veila` (version 1.0.1).
 
 ## Installation
 
-Sanctoria Veila is not yet listed on [WordPress.org](https://wordpress.org/plugins/). Download the zip from [Releases](https://github.com/sanctoria/veila/releases) or from the [product page](https://sanctoria.com/plugins/veila/) and upload it under Plugins → Add New → Upload Plugin.
+Sanctoria Veila is available in the [WordPress.org plugin directory](https://wordpress.org/plugins/sanctoria-veila/). Install it from Plugins → Add New (search for Sanctoria Veila), or download the zip from [Releases](https://github.com/sanctoria/veila/releases) and upload it under Plugins → Add New → Upload Plugin. After activation, go to Appearance → Sanctoria Veila.
 
 ## Optional Pro add-on
 
@@ -36,5 +36,6 @@ Sanctoria Veila is licensed under the [GNU General Public License v2 or later](L
 
 ## Links
 
+- [WordPress.org](https://wordpress.org/plugins/sanctoria-veila/)
 - [Product page](https://sanctoria.com/plugins/veila/)
 - [sanctoria.com](https://sanctoria.com)

@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings screen (Appearance > Veila) with a live preview.
+ * Settings screen (Appearance > Sanctoria Veila) with a live preview.
  *
  * @package Veila
  */
@@ -43,7 +43,7 @@ class Veila_Admin {
 	}
 
 	/**
-	 * Add Appearance > Veila.
+	 * Add Appearance > Sanctoria Veila.
 	 */
 	public static function menu() {
 		add_theme_page(
@@ -56,7 +56,7 @@ class Veila_Admin {
 	}
 
 	/**
-	 * Settings URL for Appearance > Veila.
+	 * Settings URL for Appearance > Sanctoria Veila.
 	 *
 	 * @return string
 	 */
@@ -330,7 +330,6 @@ class Veila_Admin {
 						</div>
 
 						<div id="veila-tab-advanced" class="veila-panel">
-							<?php self::field_textarea( 'custom_css', __( 'Custom CSS', 'sanctoria-veila' ), $s['custom_css'], __( 'Added only on the splash page. Do not paste scripts here.', 'sanctoria-veila' ), 'large-text code', 8 ); ?>
 							<?php self::field_checkbox( 'show_credit', __( 'Show a small “Made with Veila” note in the footer (off by default)', 'sanctoria-veila' ), $s['show_credit'] ); ?>
 							<div class="veila-info">
 								<p><strong><?php esc_html_e( 'Caching:', 'sanctoria-veila' ); ?></strong> <?php esc_html_e( 'The splash page is sent with no-cache headers, and Veila asks common cache plugins (LiteSpeed, WP Rocket, W3 Total Cache, WP Super Cache, SiteGround, Breeze, Cache Enabler, WP Fastest Cache, Nginx Helper) to purge whenever you save. If you use a CDN, purge it after switching modes.', 'sanctoria-veila' ); ?></p>
